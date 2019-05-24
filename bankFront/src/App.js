@@ -39,17 +39,19 @@ changeAccountNumber1=(num)=>{
 getBalance=(num)=>{
   let balance=0;
   let accountNumber=num;
-  let url="https://localhost:9090/api/v1/accounts/"+accountNumber
-  request.open('get', url);
+  let url="http://localhost:9090/api/v1/accounts/"+accountNumber
+  let request = new XMLHttpRequest();
+  request.open('GET', url);
   request.responseType = 'json';
-    request.setRequestHeader("content-Type","application/json");
-    request.onload=()=>{
-      balance=request.response;
-      this.setState({
-        balance:balance
-      })
-    }
-    request.send();
+  request.setRequestHeader("content-Type","application/json");
+  request.onload=()=>{
+    console.log(num);
+    balance=request.response;
+    this.setState({
+      balance:balance
+    })
+  }
+  request.send();
 
 }
 
