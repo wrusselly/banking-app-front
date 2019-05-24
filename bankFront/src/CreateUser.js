@@ -19,7 +19,7 @@ class CreateUser extends Component{
 
     changeUsernameText=(e)=>{
         this.setState({
-            usernameText=e.target.value
+            usernameText:e.target.value
         })
     }
 
@@ -30,8 +30,8 @@ class CreateUser extends Component{
     }
 
     createUser=()=>{
-        username=this.state.usernameText;
-        password=this.state.passwordText
+        let username=this.state.usernameText;
+        let password=this.state.passwordText
     }
 
 }
