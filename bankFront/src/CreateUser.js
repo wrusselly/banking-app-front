@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class CreateUser extends Component{
 
     state={
-        nameText:"",
+        usernameText:"",
         passwordText:""
     }
 
@@ -16,6 +16,24 @@ class CreateUser extends Component{
             </div>
         )
     }
+
+    changeUsernameText=(e)=>{
+        this.setState({
+            usernameText=e.target.value
+        })
+    }
+
+    changePasswordText=(e)=>{
+        this.setState({
+            passwordText:e.target.value
+        })
+    }
+
+    createUser=()=>{
+        username=this.state.usernameText;
+        password=this.state.passwordText
+    }
+
 }
 
 export default CreateUser;

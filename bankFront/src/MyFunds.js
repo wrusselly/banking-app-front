@@ -10,9 +10,24 @@ class MyFunds extends Component{
             <div>
                 <input type="text" onChange={this.changeNumInput}/>
                 <button type="button" onChange={this.addFunds}>add</button>
-                <button typr='button' onChange={this.minFunds}>min</button>
+                <button type='button' onChange={this.minFunds}>min</button>
             </div>
         )
     }
+
+
+    addFunds=()=>{
+        this.props.changeBalanceFunction(this.props.accountNum,this.state.numInput)
+    }
+
+    minFunds=()=>{
+        this.props.changeBalanceFunction(this.props.accountNum,-this.state.numInput)
+    }
+
+    changeNumInput=(e)=>[
+        this.setState({
+            numInput:e.target.value
+        })
+    ]
 }
 export default MyFunds;

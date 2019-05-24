@@ -12,7 +12,7 @@ class Login extends Component {
             <div>
                 Account number:<input type="text" onChange={this.numberChange}/><br/> 
                 Password:<input type="text" onChange={this.passwordChange}/><br/>
-                <button type='button' onChange={this.login}>login</button>
+                <button type='button' onClick={this.login}>login</button>
                 
                 
                 
@@ -30,6 +30,10 @@ class Login extends Component {
         this.setState({
             passwordText:e.target.value
         })
+    }
+
+    login=()=>{
+        this.props.changeAccountNumberFunction(this.state.numberText)
     }
 
 }

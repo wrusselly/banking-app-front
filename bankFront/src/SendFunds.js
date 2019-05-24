@@ -17,6 +17,11 @@ class SendFunds extends Component{
         )
     }
 
+    sendFunds=()=>{
+        this.props.changeBalanceFunction(this.props.accountNum,-this.state.numInput)
+        this.props.changeBalanceFunction(this.state.idInput,this.state.numInput)
+    }
+
     changeIDInput=(e)=>{
         this.setState({
             idInput:e.target.value
