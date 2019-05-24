@@ -1,5 +1,5 @@
 FROM node:latest
 WORKDIR /app
-COPY . .
+COPY ./backFront .
 RUN npm install
 ENTRYPOINT ["npm", "start"]
